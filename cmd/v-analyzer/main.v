@@ -72,9 +72,7 @@ fn run(cmd cli.Command) ! {
 	mut jrpc_server := &jsonrpc.Server{
 		stream: stream
 		interceptors: [
-			&log.LogRecorder{
-				enabled: true
-			},
+			&log.LogRecorder{},
 		]
 		handler: ls
 	}

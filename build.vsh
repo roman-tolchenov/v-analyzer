@@ -34,7 +34,7 @@ fn (m ReleaseMode) compile_cmd() string {
 	} else {
 		$if windows {
 			// TCC cannot build tree-sitter on Windows.
-			'-cc gcc'
+			'-cc clang'
 		} $else {
 			// Let `-prod` toggle the appropriate production compiler.
 			''
