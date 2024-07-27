@@ -32,8 +32,8 @@ mut:
 	file        os.File
 	buffer      strings.Builder
 	file_opened bool
-	enabled     bool
 pub mut:
+	enabled     bool
 	file_path string
 }
 
