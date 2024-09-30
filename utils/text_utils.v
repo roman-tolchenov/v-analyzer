@@ -23,15 +23,20 @@ module utils
 
 pub fn pascal_case_to_snake_case(s string) string {
 	mut res := ''
+	mut was_digit := false
 	for index, c in s {
 		if c.ascii_str().is_upper() {
 			if index > 0 {
 				res += '_'
 			}
 			res += c.ascii_str().to_lower()
+		} else if c.is_digit() && !was_digit {
+			res += '_'
+			res += c.ascii_str()
 		} else {
 			res += c.ascii_str()
 		}
+		was_digit = c.is_digit()
 	}
 	return res
 }
